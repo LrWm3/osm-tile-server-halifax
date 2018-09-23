@@ -1,0 +1,15 @@
+version: "3"
+services:
+  openstreetmap-tile-server:
+    image: overv/openstreetmap-tile-server
+    command:
+      - run
+    ports:
+      - "80:80"
+    volumes:
+      - "openstreetmap-data:/var/lib/postgresql/10/main"
+      - "openstreetmap-rendered-tiles:/var/lib/mod_tile"
+
+volumes:
+  openstreetmap-data: {}
+  openstreetmap-rendered-tiles: {}

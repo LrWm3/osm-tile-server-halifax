@@ -1,0 +1,14 @@
+version: "3"
+services:
+  openstreetmap-tile-server:
+    image: overv/openstreetmap-tile-server
+    command:
+      - import
+    ports:
+      - "80:80"
+    volumes:
+      - "./tiles/planet_-66.511,43.297_-59.459,47.1.nova_scotia.osm.pbf:/data.osm.pbf"
+      - "openstreetmap-data:/var/lib/postgresql/10/main"
+
+volumes:
+  openstreetmap-data: {}
